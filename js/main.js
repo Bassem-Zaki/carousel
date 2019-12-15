@@ -188,7 +188,6 @@ $(function () {
                 allSelect.finish();
             });
             allHover.mouseleave(function () {
-                allSelect.clearQueue();
                 autoAnimate();
             });
             
