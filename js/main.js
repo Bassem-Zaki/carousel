@@ -185,7 +185,7 @@ $(function () {
                 });
             }
             allHover.mouseenter(function () {
-                allSelect.stop(false, true);
+                allSelect.stop(true, true);
             });
             allHover.mouseleave(function () {
                 autoAnimate();
