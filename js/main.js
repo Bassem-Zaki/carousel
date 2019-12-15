@@ -141,6 +141,12 @@ $(function () {
                     autoAnimate();
                     $(this).clearQueue();
                 });
+                allHover.mouseenter(function () {
+                    allSelect.stop(true, true);
+                });
+                allHover.mouseleave(function () {
+                    autoAnimate();
+                });
                 
                 
             } else {
@@ -183,13 +189,14 @@ $(function () {
                     autoAnimate();
                     $(this).clearQueue();
                 });
+                allHover.mouseenter(function () {
+                    allSelect.stop(true, true);
+                });
+                allHover.mouseleave(function () {
+                    autoAnimate();
+                });
             }
-            allHover.mouseenter(function () {
-                allSelect.stop(true, true);
-            });
-            allHover.mouseleave(function () {
-                autoAnimate();
-            });
+            
         });
         
 
