@@ -1,0 +1,354 @@
+@font-face {
+  font-family: "SukarBlack";
+  src: url("../fonts/Sukar-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SukarRegular";
+  src: url("../fonts/Sukar-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "SukarBlack";
+  direction: rtl;
+  text-align: right;
+}
+
+.our-projects {
+  padding: 70px 0;
+  /* Start Side Navbar */
+  /* End Side Navbar */
+  /* Start Projects */
+  /* End Projects */
+  /* Start Carousel */
+  /* End Carousel */
+}
+.our-projects h3 {
+  font-size: 1.1rem;
+  color: #25c373;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.our-projects h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 110px;
+  position: relative;
+}
+.our-projects h2::before {
+  content: "";
+  position: absolute;
+  width: 85px;
+  height: 4px;
+  background-color: #25c373;
+  display: block;
+  top: 50px;
+  left: 44%;
+  border-radius: 5px;
+}
+.our-projects h2::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  background-color: #f6c60d;
+  display: block;
+  top: 50px;
+  left: 53%;
+  border-radius: 5px;
+}
+.our-projects .side-nav {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 370px;
+  z-index: 1;
+}
+.our-projects .side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.our-projects .side-nav ul li {
+  display: block;
+  cursor: pointer;
+}
+.our-projects .side-nav ul li:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+.our-projects .side-nav ul li span {
+  padding: 16px 10px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  font-family: "SukarRegular";
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.our-projects .side-nav ul li span::before {
+  content: ">";
+  color: #25c373;
+  font-weight: 700;
+  margin: 0 8px;
+  font-size: 1.1rem;
+}
+.our-projects .side-nav ul li:hover span {
+  color: #25c373;
+}
+.our-projects .side-nav ul .active span {
+  background-color: #25c19d;
+  color: #fff;
+  -webkit-transform: scaleX(1.1);
+          transform: scaleX(1.1);
+  border-radius: 5px;
+  position: relative;
+  z-index: 3;
+}
+.our-projects .side-nav ul .active span:hover {
+  color: #fff;
+}
+.our-projects .side-nav ul .active span::before {
+  color: #fff;
+}
+.our-projects .projects {
+  z-index: 2;
+  position: relative;
+  height: 430px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: -30px -2px;
+  -webkit-box-shadow: 0 0 10px -3px #000;
+          box-shadow: 0 0 10px -3px #000;
+}
+.our-projects .projects::before {
+  content: "";
+  background-color: rgba(137, 137, 137, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.our-projects .projects .bg-img-box .bg-img-pro {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: none;
+}
+.our-projects .projects .bg-img-box .active {
+  display: block;
+}
+.our-projects .projects .bg-img-box .bg-animate {
+  -webkit-animation-name: bg-animation;
+          animation-name: bg-animation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes bg-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bg-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.our-projects .projects .project {
+  color: #fff;
+  padding: 40px 40px 40px 50px;
+  display: none;
+  cursor: pointer;
+  position: relative;
+}
+.our-projects .projects .project h4 {
+  margin-bottom: 20px;
+}
+.our-projects .projects .project .project-content {
+  color: #e7e7e6;
+  font-size: 1.1rem;
+  line-height: 28px;
+}
+.our-projects .projects .project .project-btn {
+  color: #25c373;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-top: 25px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.our-projects .projects .project .project-btn:hover {
+  color: #fff;
+  background-color: #25c373;
+}
+.our-projects .projects .active {
+  display: block;
+}
+.our-projects .projects .animateProjects {
+  -webkit-animation-name: movingProject;
+          animation-name: movingProject;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+@-webkit-keyframes movingProject {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes movingProject {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.our-projects .porducts-carousel {
+  position: relative;
+  top: -60px;
+  height: 240px;
+  z-index: 5;
+  overflow: hidden;
+}
+.our-projects .porducts-carousel .carousel-arrow-left,
+.our-projects .porducts-carousel .carousel-arrow-right {
+  background-color: #333;
+  color: #fff;
+  font-size: 1.1rem;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 35px;
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 10px -3px #555;
+          box-shadow: 0 0 10px -3px #555;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.our-projects .porducts-carousel .carousel-arrow-left:hover,
+.our-projects .porducts-carousel .carousel-arrow-right:hover {
+  opacity: 0.7;
+}
+.our-projects .porducts-carousel .carousel-arrow-left {
+  left: 0;
+}
+.our-projects .porducts-carousel .carousel-arrow-right {
+  right: 0;
+}
+.our-projects .porducts-carousel ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 26px 0 30px;
+}
+.our-projects .porducts-carousel ul .owl-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.our-projects .porducts-carousel ul .owl-item li {
+  width: 280px;
+  text-align: center;
+  cursor: pointer;
+}
+.our-projects .porducts-carousel ul .owl-item li .product-img-box {
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 0 10px -3px #555;
+          box-shadow: 0 0 10px -3px #555;
+  position: relative;
+}
+.our-projects .porducts-carousel ul .owl-item li .product-img-box .product-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+.our-projects .porducts-carousel ul .owl-item li h5 {
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.our-projects .porducts-carousel ul .owl-item:hover .product-img-box .product-overlay {
+  display: block;
+  background-color: rgba(37, 193, 157, 0.5);
+}
+.our-projects .porducts-carousel ul .owl-item:hover h5 {
+  color: #25c373;
+}
+.our-projects .porducts-carousel .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.our-projects .porducts-carousel .animateCarousel {
+  -webkit-animation-name: movingCarousel;
+          animation-name: movingCarousel;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+.our-projects .porducts-carousel:hover .project {
+  -webkit-animation-timing-function: step-start;
+          animation-timing-function: step-start;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes movingCarousel {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes movingCarousel {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
