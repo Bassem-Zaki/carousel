@@ -120,8 +120,8 @@ $(function () {
                         .removeClass("animateProjects active")
                         .next()
                         .addClass("animateProjects active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
 
                 bgImgPro.delay(3000).queue(function () {
@@ -129,8 +129,8 @@ $(function () {
                         .removeClass("bg-animate active")
                         .next()
                         .addClass("bg-animate active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
 
                 porductsCarousel.delay(3000).queue(function () {
@@ -138,8 +138,8 @@ $(function () {
                         .removeClass("animateCarousel active")
                         .next()
                         .addClass("animateCarousel active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
                 
             } else {
@@ -159,8 +159,8 @@ $(function () {
                     $(".projects .project")
                         .eq(0)
                         .addClass("animateProjects active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
 
                 bgImgPro.delay(3000).queue(function () {
@@ -169,8 +169,8 @@ $(function () {
                     $(".projects .bg-img-box .bg-img-pro")
                         .eq(0)
                         .addClass("bg-animate active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
 
                 porductsCarousel.delay(3000).queue(function () {
@@ -179,8 +179,8 @@ $(function () {
                     $(".porducts-carousel ul")
                         .eq(0)
                         .addClass("animateCarousel active");
-                    autoAnimate();
                     $(this).clearQueue();
+                    autoAnimate();
                 });
                 
             }
@@ -192,7 +192,6 @@ $(function () {
                     autoAnimate();
                 });
             });
-            
         });
     }());
   // End auto carousel
