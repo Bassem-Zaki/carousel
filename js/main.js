@@ -102,8 +102,8 @@ $(function () {
                 porjectsActive = $(".projects .project.active"),
                 porductsCarousel = $(".porducts-carousel .active"),
                 bgImgPro = $(".projects .bg-img-box .active"),
-                allHover = $(".side-nav, .projects, .porducts-carousel"),
-                allSelect = $(".side-nav ul .active, .projects .project.active, .porducts-carousel .active, .projects .bg-img-box .active");
+                hoverAll = $(".side-nav, .projects, .porducts-carousel"),
+                selectAll = $(".side-nav ul .active, .projects .project.active, .porducts-carousel .active, .projects .bg-img-box .active");
             
             if (!$(this).is(":last-child")) {
                 sideNav.delay(3000).queue(function () {
@@ -184,11 +184,13 @@ $(function () {
                 });
                 
             }
-            allHover.mouseenter(function () {
-                allSelect.finish();
-            });
-            allHover.mouseleave(function () {
-                autoAnimate();
+            hoverAll.hover(function () {
+                selectAll.clearQueue();
+            }, function () {
+                selectAll.delay(1000).queue(function () {
+                    selectAll.clearQueue();
+                    autoAnimate();
+                });
             });
             
         });
