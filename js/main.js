@@ -3,27 +3,23 @@
 $(function () {
     "use strict";
 
-    // start carousel with event click setInterval
+    // start Sidebar with event click
 
     $(".side-nav li span").on("click", function () {
         var side_nav_id = $(this).attr("data-id");
+        
         $(this)
             .parent("li")
             .addClass("active")
             .siblings()
             .removeClass("active");
+        
 
         $(".project").each(function () {
             var project_id = $(this).attr("data-id");
             if (project_id === side_nav_id) {
                 $(this)
                     .addClass("animateProjects active")
-                    .animate(
-                        {
-                            left: "0"
-                        },
-                        600
-                    )
                     .siblings()
                     .removeClass("animateProjects active");
             }
@@ -33,12 +29,6 @@ $(function () {
             if (bg_img_id === side_nav_id) {
                 $(this)
                     .addClass("bg-animate active")
-                    .animate(
-                        {
-                            opacity: "1"
-                        },
-                        600
-                    )
                     .siblings()
                     .removeClass("bg-animate active");
             }
@@ -48,17 +38,15 @@ $(function () {
             if (carousel_id === side_nav_id) {
                 $(this)
                     .addClass("animateCarousel active")
-                    .animate(
-                        {
-                            top: "0"
-                        },
-                        600
-                    )
                     .siblings()
                     .removeClass("animateCarousel active");
             }
         });
     });
+    
+    // End Sidebar with event click
+    
+    // Start Carousel
 
     $(".porducts-carousel .owl-carousel").owlCarousel({
         rtl: true,
@@ -87,112 +75,69 @@ $(function () {
         }
     });
 
-    // End carousel with event click
+    // End Carousel
 
     // Start auto carousel
-   
 
     (function autoAnimate() {
         
-        
-        $(
-            ".side-nav ul .active, .projects .project.active, .porducts-carousel .active, .projects .bg-img-box .active"
-        ).each(function () {
+        $(".side-nav ul .active, .projects .project.active, .projects .bg-img-box .active, .porducts-carousel .active").each(function () {
             var sideNav = $(".side-nav ul .active"),
                 porjectsActive = $(".projects .project.active"),
-                porductsCarousel = $(".porducts-carousel .active"),
                 bgImgPro = $(".projects .bg-img-box .active"),
+                porductsCarousel = $(".porducts-carousel .active"),
                 hoverAll = $(".side-nav, .projects, .porducts-carousel"),
                 selectAll = $(".side-nav ul .active, .projects .project.active, .porducts-carousel .active, .projects .bg-img-box .active");
             
             if (!$(this).is(":last-child")) {
-                sideNav.delay(3000).queue(function () {
+
+                selectAll.delay(3000).queue(function () {
                     sideNav
                         .removeClass("active")
                         .next()
                         .addClass("active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-
-                porjectsActive.delay(3000).queue(function () {
-                    $(this)
+                    porjectsActive
                         .removeClass("animateProjects active")
                         .next()
                         .addClass("animateProjects active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-
-                bgImgPro.delay(3000).queue(function () {
-                    $(this)
+                    bgImgPro
                         .removeClass("bg-animate active")
                         .next()
                         .addClass("bg-animate active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-
-                porductsCarousel.delay(3000).queue(function () {
-                    $(this)
+                    porductsCarousel
                         .removeClass("animateCarousel active")
                         .next()
                         .addClass("animateCarousel active");
                     $(this).clearQueue();
                     autoAnimate();
                 });
-                
+
             } else {
                 
-                $(this).delay(3000).queue(function () {
+                selectAll.delay(3000).queue(function () {
                     sideNav.removeClass("active");
-                    $(".side-nav ul li")
-                        .eq(0)
-                        .addClass("active");
+                    $(".side-nav ul li").eq(0).addClass("active");
+                    porjectsActive.removeClass("animateProjects active");
+                    $(".projects .project").eq(0).addClass("animateProjects active");
+                    bgImgPro.removeClass("bg-animate active");
+                    $(".projects .bg-img-box .bg-img-pro").eq(0).addClass("bg-animate active");
+                    porductsCarousel.removeClass("animateCarousel active");
+                    $(".porducts-carousel ul").eq(0).addClass("animateCarousel active");
                     $(this).clearQueue();
                     autoAnimate();
                 });
-
-                porjectsActive.delay(3000).queue(function () {
-                    $(this).removeClass("animateProjects active");
-
-                    $(".projects .project")
-                        .eq(0)
-                        .addClass("animateProjects active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-
-                bgImgPro.delay(3000).queue(function () {
-                    $(this).removeClass("bg-animate active");
-
-                    $(".projects .bg-img-box .bg-img-pro")
-                        .eq(0)
-                        .addClass("bg-animate active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-
-                porductsCarousel.delay(3000).queue(function () {
-                    $(this).removeClass("animateCarousel active");
-
-                    $(".porducts-carousel ul")
-                        .eq(0)
-                        .addClass("animateCarousel active");
-                    $(this).clearQueue();
-                    autoAnimate();
-                });
-                
             }
             hoverAll.hover(function () {
                 selectAll.clearQueue();
             }, function () {
-                selectAll.delay(1000).queue(function () {
-                    selectAll.clearQueue();
+                $(this).delay(1000).queue(function () {
                     autoAnimate();
+                    $(this).clearQueue();
                 });
             });
+            
         });
     }());
+
   // End auto carousel
 });
