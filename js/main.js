@@ -130,9 +130,9 @@ $(function () {
             hoverAll.hover(function () {
                 selectAll.clearQueue();
             }, function () {
-                $(this).delay(1000).queue(function () {
-                    autoAnimate();
+                selectAll.delay(2000).queue(function () {
                     $(this).clearQueue();
+                    autoAnimate();
                 });
             });
             
