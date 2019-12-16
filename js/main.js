@@ -128,11 +128,11 @@ $(function () {
                 });
             }
             hoverAll.hover(function () {
-                selectAll.clearQueue();
+                selectAll.finish();
             }, function () {
-                selectAll.delay(2000).queue(function () {
-                    $(this).clearQueue();
+                selectAll.delay(1000).queue(function () {
                     autoAnimate();
+                    $(this).clearQueue();
                 });
             });
             
